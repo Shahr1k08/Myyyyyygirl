@@ -1,18 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
 <meta charset="UTF-8">
-<title>Secret</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Page</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    font-family:Arial,sans-serif;
+}
+.box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    width:300px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+input{
+    width:90%;
+    padding:12px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    margin:10px 0;
+}
+button{
+    background:#667eea;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+}
+#secret{
+    display:none;
+}
+</style>
 </head>
 <body>
 
-<script>
-let kod = prompt("Kodni kiriting:");
+<div class="box" id="login">
+    <h2>🔒 Maxfiy Sahifa</h2>
+    <p>Kodni kiriting</p>
+    <input type="password" id="code">
+    <br>
+    <button onclick="check()">Kirish</button>
+</div>
 
-if (kod === "6969") {
-    document.write("<h1>Tabriklayman!</h1><p>Siz to'g'ri kod kiritdingiz.</p>");
-} else {
-    document.write("<h1>Xato kod!</h1>");
+<div class="box" id="secret">
+    <h1>❤️ Salom!</h1>
+    <p>Bu yerga o'zing xohlagan maxfiy xabarni yozasan.</p>
+</div>
+
+<script>
+function check(){
+    if(document.getElementById("code").value==="6969"){
+        document.getElementById("login").style.display="none";
+        document.getElementById("secret").style.display="block";
+    }else{
+        alert("❌ Noto'g'ri kod");
+    }
 }
 </script>
 
